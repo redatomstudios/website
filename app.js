@@ -9,6 +9,9 @@ app.use(express.static(__dirname + '/public'));
 // Render as plain HTML
 app.set('view engine', 'jade');
 
+// Serve awesome favicon
+app.use(favicon(__dirname + '/public/images/favicon.ico'))
+
 app.get('/*', function(req, res, next) {
 	res.render('index');
 });
